@@ -19,7 +19,7 @@ const Header = ({ user, logoutRequest }) => {
 
 	return (
 		<header className="header">
-			<Link to="/">
+		  <Link to="/">
 				<img className="header__img" src={logo} alt="Platzi Video" />
 			</Link>
 			<div className="header__menu">

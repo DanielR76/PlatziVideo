@@ -19,6 +19,11 @@ const reducer = (state, action) => {
 				...state,
 				user: action.payload,
 			};
+		case actions.SIGN_UP:
+			return {
+				...state,
+				user: action.payload,
+			};
 		default:
 			return state;
 	}
