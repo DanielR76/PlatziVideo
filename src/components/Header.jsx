@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import { logoutRequest } from "../actions";
 
 import "../assets/styles/components/Header.scss";
+import classNames from "classnames";
 import logo from "../assets/static/logo-platzi-video-BW2.png";
 import userIcon from "../assets/static/user-icon.png";
 import gravatar from "../utils/gravatar";
 
-const Header = ({ user, logoutRequest }) => {
+const Header = ({ user, logoutRequest, isLogin, isRegister }) => {
 	const history = useHistory();
 	const isUser = Object.keys(user).length > 0;
 
@@ -17,9 +18,14 @@ const Header = ({ user, logoutRequest }) => {
 		history.push("/login");
 	};
 
+	const headerClass = classNames("header", {
+		isLogin,
+		isRegister,
+	});
+
 	return (
-		<header className="header">
-		  <Link to="/">
+		<header className={headerClass}>
+			<Link to="/">
 				<img className="header__img" src={logo} alt="Platzi Video" />
 			</Link>
 			<div className="header__menu">

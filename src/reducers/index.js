@@ -28,9 +28,9 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				playing:
-					state.trends.find((item) => item.id === Number(action.payload)) ||
-					state.originals.find((item) => item.id === Number(action.payload)) ||
-					[],
+					state.trends
+						.concat(state.originals)
+						.find((item) => item.id === Number(action.payload)) || [],
 			};
 		default:
 			return state;
