@@ -13,7 +13,11 @@ import NotFound from "../containers/NotFound";
 import initialState from "../../initialState.json";
 import reducer from "../reducers";
 
-const store = createStore(reducer, initialState.initalState);
+const store = createStore(
+	reducer,
+	initialState.initalState,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => (
 	<Provider store={store}>
